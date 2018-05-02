@@ -15,7 +15,7 @@ hw_parameters(x)
 \value{
 \code{holt_parameters} produces a vector of 2 values: alpha, beta.
 
-\code{hw_parameters} produces a vector of 3 values: alpha, beta and gamma.
+\code{hw_parameters} produces a vector of 3 values: hw_alpha, hw_beta and hw_gamma.
 }
 \description{
 Estimate the smoothing parameter for the level-alpha and
