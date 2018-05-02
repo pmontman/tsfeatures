@@ -92,7 +92,7 @@ pacf_features <- function(x){
 #' @param x a univariate time series
 #' @return \code{holt_parameters} produces a vector of 2 values: alpha, beta.
 #'
-#' \code{hw_parameters} produces a vector of 3 values: alpha, beta and gamma.
+#' \code{hw_parameters} produces a vector of 3 values: hw_alpha, hw_beta and hw_gamma.
 #' @author Thiyanga Talagala, Pablo Montero-Manso
 #' @export
 
@@ -108,6 +108,7 @@ hw_parameters <- function(x) {
   hw_fit <- NULL
   hw_fit$par <- c(NA, NA, NA)
   try(hw_fit <- forecast::ets(x, model=c("AAA")), silent=TRUE)
+  names(hw_fit$par) <- c("hw_alpha", "hw_beta" , "hw_gamma")
   hw_fit$par[1:3]
 }
 # #' Autocorrelation coefficient at lag 1 of the residual
